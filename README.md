@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -22,12 +21,6 @@
       justify-content: center;
       min-height: 100vh;
       overflow: hidden;
-    }
-
-    /* Hide any text nodes that might appear */
-    body::before,
-    body::after {
-      display: none !important;
     }
 
     #mainContent {

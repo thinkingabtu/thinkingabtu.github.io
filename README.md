@@ -131,7 +131,7 @@
   // YES button sequence
   yesBtn.addEventListener("click", () => {
     buttons.style.display = "none";
-    question.innerText = "You are my Valentine forever 💖";
+    question.innerText = "💖💖💖 You are my Valentine 💖💖💖";
 
     // After short delay, show I LOVE YOU with hearts
     setTimeout(() => {

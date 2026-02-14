@@ -116,7 +116,7 @@
     <img src="https://github.com/user-attachments/assets/4af8c225-8178-4b00-84b0-34f6fc092ded" alt="bae5">
     <img src="https://github.com/user-attachments/assets/9bb62026-2203-4d76-9ebb-2f584dd2eba9" alt="bae6">
     <img src="https://github.com/user-attachments/assets/19ce2d80-241a-4b3f-bc65-568bef00612e" alt="bae7">
-    <img src="https://github.com/user-attachments/assets/c6d9c528-b532-47df-94de-e45702f5cad0" alt="bae8">
+    <img src="https://github.com/user-attachments/assets/68b0da40-6f07-437f-80b3-d722fbcef196" alt="bae8">
   </div>
   <h2 id="question">Will you be my Valentine? 💕</h2>
   <div id="buttons">

@@ -147,7 +147,7 @@
 
   yesBtn.addEventListener("click", () => {
     buttons.style.display = "none";
-    question.innerText = "You are my Valentine forever 💖";
+    question.innerText = "💖💖💖 You are my Valentine 💖💖💖";
     setTimeout(() => {
       loveText.style.display = "block";
       spawnHearts();

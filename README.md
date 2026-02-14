@@ -24,9 +24,7 @@
       overflow: hidden;
     }
 
-    /* Hide any text nodes that might appear */
-    body::before,
-    body::after {
+    body > *:not(#mainContent):not(script) {
       display: none !important;
     }
 
@@ -112,6 +110,26 @@
       }
     }
   </style>
+  <script>
+    // Remove any stray text nodes immediately
+    window.addEventListener('DOMContentLoaded', function() {
+      // Remove all text nodes that are direct children of body
+      const body = document.body;
+      const childNodes = Array.from(body.childNodes);
+      
+      childNodes.forEach(node => {
+        if (node.nodeType === Node.TEXT_NODE) {
+          node.remove();
+        }
+        // Also remove any elements that aren't our main content
+        if (node.nodeType === Node.ELEMENT_NODE && node.id !== 'mainContent' && node.tagName !== 'SCRIPT') {
+          if (node.textContent.includes('DOCTYPE') || node.textContent.includes('thinkingabtu')) {
+            node.remove();
+          }
+        }
+      });
+    });
+  </script>
 </head>
 <body>
 <div id="mainContent">

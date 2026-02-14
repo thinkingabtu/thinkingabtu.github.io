@@ -7,18 +7,27 @@
     body {
       margin: 0;
       padding: 0;
-      background: #ffd6e8;
+      background: linear-gradient(135deg, #ffd6e8, #ffeef6);
       font-family: "Comic Sans MS", cursive, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
+      overflow: hidden;
     }
 
     h2 {
-      margin-bottom: 20px;
       text-align: center;
+    }
+
+    #loveText {
+      font-size: 64px;
+      font-weight: bold;
+      color: #ff3b7d;
+      text-shadow: 0 4px 10px rgba(255, 59, 125, 0.4);
+      display: none;
+      margin-top: 20px;
     }
 
     button {
@@ -26,7 +35,7 @@
       padding: 10px 20px;
       margin: 10px;
       cursor: pointer;
-      border-radius: 8px;
+      border-radius: 10px;
       border: none;
     }
 
@@ -38,21 +47,39 @@
     }
 
     #gallery img {
-      width: 150px;
-      height: 150px;
+      width: 140px;
+      height: 140px;
       object-fit: cover;
-      border-radius: 12px;
+      border-radius: 14px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
 
     #noBtn {
       position: relative;
     }
+
+    .heart {
+      position: absolute;
+      color: #ff4d88;
+      font-size: 24px;
+      animation: floatUp 4s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(100vh) scale(0.8);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-10vh) scale(1.4);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Image Gallery -->
   <div id="gallery">
     <img src="https://github.com/user-attachments/assets/ad76f765-c1d6-474c-abc5-ddea43e61bda">
     <img src="https://github.com/user-attachments/assets/263b45e2-0a42-4ca8-ab2e-e90165447d5c">
@@ -71,14 +98,14 @@
     <button id="noBtn">NO</button>
   </div>
 
-  <div id="followUp"></div>
+  <div id="loveText">I LOVE YOU 💖💖💖</div>
 
   <script>
     const noBtn = document.getElementById("noBtn");
     const yesBtn = document.getElementById("yesBtn");
     const question = document.getElementById("question");
-    const followUp = document.getElementById("followUp");
     const buttons = document.getElementById("buttons");
+    const loveText = document.getElementById("loveText");
 
     noBtn.addEventListener("mouseover", () => {
       const x = Math.random() * 300 - 150;
@@ -91,13 +118,23 @@
       question.innerText = "You are my Valentine forever 💖";
 
       setTimeout(() => {
-        question.innerText = "Sushi for my one and only Valentine? 🍣";
-        followUp.innerHTML = `
-          <button onclick="alert('Sushi coming your way 🍣❤️')">YES 🍣</button>
-          <button onclick="alert('Okay, I’ll surprise you 😌')">NO</button>
-        `;
-      }, 2000);
+        loveText.style.display = "block";
+        spawnHearts();
+      }, 1500);
     });
+
+    function spawnHearts() {
+      setInterval(() => {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerText = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (3 + Math.random() * 2) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 5000);
+      }, 300);
+    }
   </script>
 
 </body>

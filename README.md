@@ -54,16 +54,16 @@
 
   <!-- Image Gallery -->
   <div id="gallery">
-    <img src="https://github.com/user-attachments/assets/ad76f765-c1d6-474c-abc5-ddea43e61bda" alt="bae1">
-    <img src="https://github.com/user-attachments/assets/263b45e2-0a42-4ca8-ab2e-e90165447d5c" alt="bae2">
-    <img src="https://github.com/user-attachments/assets/9d8d9763-a9e7-4f9c-b4c6-bd5657af4360" alt="bae3">
-    <img src="https://github.com/user-attachments/assets/fb2d1c39-a730-4a3c-9a3f-4297a205f6ae" alt="bae4">
-    <img src="https://github.com/user-attachments/assets/4af8c225-8178-4b00-84b0-34f6fc092ded" alt="bae5">
-    <img src="https://github.com/user-attachments/assets/9bb62026-2203-4d76-9ebb-2f584dd2eba9" alt="bae6">
-    <img src="https://github.com/user-attachments/assets/19ce2d80-241a-4b3f-bc65-568bef00612e" alt="bae7">
+    <img src="https://github.com/user-attachments/assets/ad76f765-c1d6-474c-abc5-ddea43e61bda">
+    <img src="https://github.com/user-attachments/assets/263b45e2-0a42-4ca8-ab2e-e90165447d5c">
+    <img src="https://github.com/user-attachments/assets/9d8d9763-a9e7-4f9c-b4c6-bd5657af4360">
+    <img src="https://github.com/user-attachments/assets/fb2d1c39-a730-4a3c-9a3f-4297a205f6ae">
+    <img src="https://github.com/user-attachments/assets/4af8c225-8178-4b00-84b0-34f6fc092ded">
+    <img src="https://github.com/user-attachments/assets/9bb62026-2203-4d76-9ebb-2f584dd2eba9">
+    <img src="https://github.com/user-attachments/assets/19ce2d80-241a-4b3f-bc65-568bef00612e">
+    <img src="https://github.com/user-attachments/assets/c6d9c528-b532-47df-94de-e45702f5cad0">
   </div>
 
-  <!-- Main Question -->
   <h2 id="question">Will you be my Valentine? 💕</h2>
 
   <div id="buttons">
@@ -87,12 +87,16 @@
     });
 
     yesBtn.addEventListener("click", () => {
-      question.innerText = "Can I send you sushi on Uber Eats? 🍣💖";
       buttons.style.display = "none";
-      followUp.innerHTML = `
-        <button onclick="alert('Sushi is on the way 🍣❤️')">YES 🍣</button>
-        <button onclick="alert('Okay, I’ll surprise you with something else 😌')">NO</button>
-      `;
+      question.innerText = "You are my Valentine forever 💖";
+
+      setTimeout(() => {
+        question.innerText = "Sushi for my one and only Valentine? 🍣";
+        followUp.innerHTML = `
+          <button onclick="alert('Sushi coming your way 🍣❤️')">YES 🍣</button>
+          <button onclick="alert('Okay, I’ll surprise you 😌')">NO</button>
+        `;
+      }, 2000);
     });
   </script>
 
